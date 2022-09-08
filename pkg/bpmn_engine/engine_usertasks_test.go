@@ -1,10 +1,11 @@
 package bpmn_engine
 
 import (
+	"testing"
+
 	"github.com/corbym/gocrest/is"
 	"github.com/corbym/gocrest/then"
-	"github.com/nitram509/lib-bpmn-engine/pkg/spec/BPMN20/process_instance"
-	"testing"
+	"github.com/rhzs/lib-bpmn-engine/pkg/spec/BPMN20/process_instance"
 )
 
 func Test_user_tasks_can_be_handled(t *testing.T) {

@@ -2,9 +2,9 @@
 
 ## Build status
 
-[![go test status](https://github.com/nitram509/lib-bpmn-engine/actions/workflows/go-test.yml/badge.svg)](https://github.com/nitram509/lib-bpmn-engine/actions/workflows/go-test.yml)
-[![codecov](https://codecov.io/gh/nitram509/lib-bpmn-engine/branch/main/graph/badge.svg?token=J5J6SQ0TPJ)](https://codecov.io/gh/nitram509/lib-bpmn-engine)
-[![Documentation Status](https://readthedocs.com/projects/nitram509-lib-bpmn-engine/badge/?version=latest)](https://nitram509-lib-bpmn-engine.readthedocs-hosted.com/en/latest/?badge=latest)
+[![go test status](https://github.com/rhzs/lib-bpmn-engine/actions/workflows/go-test.yml/badge.svg)](https://github.com/rhzs/lib-bpmn-engine/actions/workflows/go-test.yml)
+[![codecov](https://codecov.io/gh/rhzs/lib-bpmn-engine/branch/main/graph/badge.svg?token=J5J6SQ0TPJ)](https://codecov.io/gh/rhzs/lib-bpmn-engine)
+[![Documentation Status](https://readthedocs.com/projects/rhzs-lib-bpmn-engine/badge/?version=latest)](https://rhzs-lib-bpmn-engine.readthedocs-hosted.com/en/latest/?badge=latest)
 
 ## Project status
 
@@ -15,10 +15,10 @@
 ## Documentation
 
 Full documentation with examples: \
-https://nitram509.github.io/lib-bpmn-engine/
+https://rhzs.github.io/lib-bpmn-engine/
 
 GoDoc: \
-https://pkg.go.dev/github.com/nitram509/lib-bpmn-engine/pkg/bpmn_engine
+https://pkg.go.dev/github.com/rhzs/lib-bpmn-engine/pkg/bpmn_engine
 
 
 ## Requirements

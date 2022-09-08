@@ -1,17 +1,20 @@
 package bpmn_engine
 
 import (
+	"testing"
+
 	"github.com/corbym/gocrest/has"
 	"github.com/corbym/gocrest/is"
 	"github.com/corbym/gocrest/then"
-	"github.com/nitram509/lib-bpmn-engine/pkg/spec/BPMN20/activity"
-	"github.com/nitram509/lib-bpmn-engine/pkg/spec/BPMN20/process_instance"
-	"testing"
+	"github.com/rhzs/lib-bpmn-engine/pkg/spec/BPMN20/activity"
+	"github.com/rhzs/lib-bpmn-engine/pkg/spec/BPMN20/process_instance"
 )
 
-const varCounter = "counter"
-const varEngineValidationAttempts = "engineValidationAttempts"
-const varFoobar = "foobar"
+const (
+	varCounter                  = "counter"
+	varEngineValidationAttempts = "engineValidationAttempts"
+	varFoobar                   = "foobar"
+)
 
 func Test_a_job_can_fail_and_keeps_the_instance_in_active_state(t *testing.T) {
 	// setup

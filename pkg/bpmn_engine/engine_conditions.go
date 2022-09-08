@@ -1,9 +1,10 @@
 package bpmn_engine
 
 import (
-	"github.com/antonmedv/expr"
-	"github.com/nitram509/lib-bpmn-engine/pkg/spec/BPMN20"
 	"strings"
+
+	"github.com/antonmedv/expr"
+	"github.com/rhzs/lib-bpmn-engine/pkg/spec/BPMN20"
 )
 
 func exclusivelyFilterByConditionExpression(flows []BPMN20.TSequenceFlow, variableContext map[string]interface{}) ([]BPMN20.TSequenceFlow, error) {

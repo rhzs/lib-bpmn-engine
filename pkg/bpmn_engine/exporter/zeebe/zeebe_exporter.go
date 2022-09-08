@@ -3,11 +3,12 @@ package zeebe
 import (
 	"context"
 	"fmt"
+	"time"
+
 	"github.com/hazelcast/hazelcast-go-client"
-	bpmnEngineExporter "github.com/nitram509/lib-bpmn-engine/pkg/bpmn_engine/exporter"
+	bpmnEngineExporter "github.com/rhzs/lib-bpmn-engine/pkg/bpmn_engine/exporter"
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/types/known/anypb"
-	"time"
 )
 
 type exporter struct {
@@ -63,7 +64,6 @@ func sendHazelcast(rb *hazelcast.Ringbuffer, data []byte) error {
 }
 
 func (e *exporter) NewProcessEvent(event *bpmnEngineExporter.ProcessEvent) {
-
 	e.updatePosition()
 
 	rcd := ProcessRecord{

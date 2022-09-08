@@ -3,9 +3,10 @@ package bpmn_engine
 import (
 	"errors"
 	"fmt"
-	"github.com/nitram509/lib-bpmn-engine/pkg/spec/BPMN20"
-	"github.com/senseyeio/duration"
 	"time"
+
+	"github.com/rhzs/lib-bpmn-engine/pkg/spec/BPMN20"
+	"github.com/senseyeio/duration"
 )
 
 type Timer struct {
@@ -19,9 +20,11 @@ type Timer struct {
 
 type TimerState string
 
-const TimerCreated TimerState = "CREATED"
-const TimerTriggered TimerState = "TRIGGERED"
-const TimerCancelled TimerState = "CANCELLED"
+const (
+	TimerCreated   TimerState = "CREATED"
+	TimerTriggered TimerState = "TRIGGERED"
+	TimerCancelled TimerState = "CANCELLED"
+)
 
 func (state *BpmnEngineState) handleIntermediateTimerCatchEvent(process *ProcessInfo, instance *ProcessInstanceInfo, ice BPMN20.TIntermediateCatchEvent) bool {
 	timer := findExistingTimerNotYetTriggered(state, ice.Id, instance)
@@ -41,7 +44,8 @@ func (state *BpmnEngineState) handleIntermediateTimerCatchEvent(process *Process
 }
 
 func createNewTimer(process *ProcessInfo, instance *ProcessInstanceInfo, ice BPMN20.TIntermediateCatchEvent,
-	generateKey func() int64) (*Timer, error) {
+	generateKey func() int64,
+) (*Timer, error) {
 	durationVal, err := findDurationValue(ice, process)
 	if err != nil {
 		return nil, &BpmnEngineError{Msg: fmt.Sprintf("Error parsing 'timeDuration' value "+

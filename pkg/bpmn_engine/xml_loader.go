@@ -4,8 +4,9 @@ import (
 	"crypto/md5"
 	"encoding/hex"
 	"encoding/xml"
-	"github.com/nitram509/lib-bpmn-engine/pkg/spec/BPMN20"
 	"io/ioutil"
+
+	"github.com/rhzs/lib-bpmn-engine/pkg/spec/BPMN20"
 )
 
 // LoadFromFile loads a given BPMN file by filename into the engine

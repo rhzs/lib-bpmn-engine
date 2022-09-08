@@ -1,12 +1,13 @@
 package bpmn_engine
 
 import (
+	"testing"
+
 	"github.com/corbym/gocrest/has"
 	"github.com/corbym/gocrest/is"
 	"github.com/corbym/gocrest/then"
-	"github.com/nitram509/lib-bpmn-engine/pkg/spec/BPMN20/activity"
-	"github.com/nitram509/lib-bpmn-engine/pkg/spec/BPMN20/process_instance"
-	"testing"
+	"github.com/rhzs/lib-bpmn-engine/pkg/spec/BPMN20/activity"
+	"github.com/rhzs/lib-bpmn-engine/pkg/spec/BPMN20/process_instance"
 )
 
 func Test_creating_a_process_sets_state_to_READY(t *testing.T) {
@@ -213,6 +214,7 @@ func Test_multiple_intermediate_catch_events_implicit_fork_and_parallel_gateway_
 	// then
 	then.AssertThat(t, instance.GetState(), is.EqualTo(process_instance.ACTIVE))
 }
+
 func Test_multiple_intermediate_catch_events_implicit_fork_and_exclusive_gateway_COMPLETED(t *testing.T) {
 	// setup
 	bpmnEngine := New("name")

@@ -3,9 +3,9 @@ package bpmn_engine
 import (
 	"time"
 
-	"github.com/nitram509/lib-bpmn-engine/pkg/spec/BPMN20"
-	"github.com/nitram509/lib-bpmn-engine/pkg/spec/BPMN20/activity"
-	"github.com/nitram509/lib-bpmn-engine/pkg/spec/BPMN20/process_instance"
+	"github.com/rhzs/lib-bpmn-engine/pkg/spec/BPMN20"
+	"github.com/rhzs/lib-bpmn-engine/pkg/spec/BPMN20/activity"
+	"github.com/rhzs/lib-bpmn-engine/pkg/spec/BPMN20/process_instance"
 )
 
 type job struct {

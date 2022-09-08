@@ -3,7 +3,7 @@ package bpmn_engine
 import (
 	"time"
 
-	"github.com/nitram509/lib-bpmn-engine/pkg/spec/BPMN20/process_instance"
+	"github.com/rhzs/lib-bpmn-engine/pkg/spec/BPMN20/process_instance"
 )
 
 type ProcessInstanceInfo struct {

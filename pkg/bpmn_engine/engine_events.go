@@ -2,9 +2,10 @@ package bpmn_engine
 
 import (
 	"fmt"
-	"github.com/nitram509/lib-bpmn-engine/pkg/spec/BPMN20"
-	"github.com/nitram509/lib-bpmn-engine/pkg/spec/BPMN20/activity"
 	"time"
+
+	"github.com/rhzs/lib-bpmn-engine/pkg/spec/BPMN20"
+	"github.com/rhzs/lib-bpmn-engine/pkg/spec/BPMN20/activity"
 )
 
 type MessageSubscription struct {
@@ -61,7 +62,7 @@ func (state *BpmnEngineState) findMessagesByProcessKey(processKey int64) *[]BPMN
 func findMatchingCaughtEvent(messages *[]BPMN20.TMessage, instance *ProcessInstanceInfo, ice BPMN20.TIntermediateCatchEvent) *CatchEvent {
 	msgName := findMessageNameById(messages, ice.MessageEventDefinition.MessageRef)
 	for i := 0; i < len(instance.caughtEvents); i++ {
-		var caughtEvent = &instance.caughtEvents[i]
+		caughtEvent := &instance.caughtEvents[i]
 		if !caughtEvent.IsConsumed && msgName == caughtEvent.Name {
 			return caughtEvent
 		}
