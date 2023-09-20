@@ -22,7 +22,6 @@ type ProcessInstance interface {
 	SetVariable(key string, value interface{})
 	GetCreatedAt() time.Time
 	GetState() process_instance.State
-	Purge()
 }
 
 func (pii *ProcessInstanceInfo) GetProcessInfo() *ProcessInfo {
