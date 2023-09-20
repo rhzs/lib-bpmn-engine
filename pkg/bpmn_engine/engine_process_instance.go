@@ -1,8 +1,9 @@
 package bpmn_engine
 
 import (
-	"github.com/nitram509/lib-bpmn-engine/pkg/spec/BPMN20/process_instance"
 	"time"
+
+	"github.com/nitram509/lib-bpmn-engine/pkg/spec/BPMN20/process_instance"
 )
 
 type ProcessInstanceInfo struct {
@@ -21,6 +22,7 @@ type ProcessInstance interface {
 	SetVariable(key string, value interface{})
 	GetCreatedAt() time.Time
 	GetState() process_instance.State
+	Purge()
 }
 
 func (pii *ProcessInstanceInfo) GetProcessInfo() *ProcessInfo {
@@ -41,6 +43,14 @@ func (pii *ProcessInstanceInfo) SetVariable(key string, value interface{}) {
 
 func (pii *ProcessInstanceInfo) GetCreatedAt() time.Time {
 	return pii.createdAt
+}
+
+func (pii *ProcessInstanceInfo) Purge() {
+	for k := range pii.variableContext {
+		delete(pii.variableContext, k)
+	}
+
+	pii.caughtEvents = nil
 }
 
 // GetState returns one of [ProcessInstanceReady,ProcessInstanceActive,ProcessInstanceCompleted]
