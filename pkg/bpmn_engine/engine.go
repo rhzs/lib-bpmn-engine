@@ -94,6 +94,23 @@ func (state *BpmnEngineState) RunOrContinueInstance(processInstanceKey int64) (*
 	return nil, nil
 }
 
+func (state *BpmnEngineState) Purge() {
+	for key := range state.handlers {
+		delete(state.handlers, key)
+	}
+
+	state.handlers = nil
+	state.processInstances = nil
+	state.exporters = nil
+	state.processes = nil
+	state.processInstances = nil
+	state.messageSubscriptions = nil
+	state.jobs = nil
+	state.timers = nil
+	state.scheduledFlows = nil
+	state.snowflake = nil
+}
+
 func (state *BpmnEngineState) run(instance *ProcessInstanceInfo) (err error) {
 	type queueElement struct {
 		inboundFlowId string

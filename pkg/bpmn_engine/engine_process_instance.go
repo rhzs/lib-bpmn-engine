@@ -41,6 +41,7 @@ func (pii *ProcessInstanceInfo) GetVariable(key string) interface{} {
 func (pii *ProcessInstanceInfo) SetVariable(key string, value interface{}) {
 	pii.initVariableContext()
 
+	delete(pii.variableContext, key)
 	pii.variableContext[key] = value
 }
 
@@ -60,6 +61,7 @@ func (pii *ProcessInstanceInfo) Purge() {
 	}
 
 	pii.caughtEvents = nil
+	pii.variableContext = nil
 }
 
 // GetState returns one of [ProcessInstanceReady,ProcessInstanceActive,ProcessInstanceCompleted]
